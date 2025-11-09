@@ -14,12 +14,12 @@ function TipModal({ receiverId, onClose }) {
     formData.append("amount", amount);
 
     try {
-      const res = await axios.post("http://localhost:8000/tips", formData);
+      await axios.post("http://localhost:8000/tips", formData); // removed unused 'res'
       setStatus("✅ Tip sent!");
     } catch (err) {
       setStatus("❌ Error sending tip");
     }
-  };
+  }
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
